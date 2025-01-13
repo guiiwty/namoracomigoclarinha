@@ -9,8 +9,11 @@
 <body>
     <div id="conteudo">
         <h2>Aceita namorar comigo?</h2>
-        <button Class="btn" onclick="sim()">SIM</button>
-        <button class="btn" onmouseover="desvia(this)">NÃO</button>
+        <img src="eren.jpg" alt="Imagem romântica" id="eren">
+        <div class="botoes">
+            <button class="btn" onclick="sim()">SIM</button>
+            <button class="btn" onmouseover="desvia(this)">NÃO</button>
+        </div>
     </div>
 </body>
 <style>
@@ -18,29 +21,42 @@
         text-align: center;
         font-family: sans-serif;
     }
+
+    #eren {
+        margin-top: 10px;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .botoes {
+        margin-top: 20px;
+    }
+
     .btn {
         background: black;
-    color: white;
-    border: none;
-    padding: 10px;
-    width: 80px;
-    border-radius: 5px;
+        color: white;
+        border: none;
+        padding: 10px;
+        width: 80px;
+        border-radius: 5px;
+        margin: 0 10px;
     }
 </style>
 
 <script>
     function sim(){
-        alert ("Você aceitou namorar comigo! :)");
+        alert("Você aceitou namorar comigo! :)");
     }
+
     function desvia(t){
         var btn = t;
         btn.style.position = 'absolute';
         btn.style.bottom = geraPosicao(10, 90);
         btn.style.left = geraPosicao(10, 90);
         console.log(btn);
-        console.log ("Opa, desviei...");
-    
+        console.log("Opa, desviei...");
     }
+
     function geraPosicao(min, max) {
         return Math.random() * (max - min) + min + '%';
     }
